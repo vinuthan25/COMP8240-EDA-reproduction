@@ -18,7 +18,8 @@ It has three parts:
 | `replication/` | `eda_replication.py`, `EDA_replication_colab.ipynb`, and `results/` (raw SST-2 results and plot) |
 | `data_collection/` | `grocery_dataset.py` and `Grocery_dataset_colab.ipynb`: scraping, cleaning and sampling the grocery reviews |
 | `new_data/` | `eda_new_data.py`, `EDA_new_data_colab.ipynb`, `grocery_reviews_labelled.csv`, and `results_new/` |
-| `judge/` | `judge_results.csv` (80 pairs with ratings) and `judge_rubric.txt` (exact method) |
+| `judge/` | `judge_results.csv` (80 pairs with ratings), `judge_rubric.txt` (exact method) and `make_judge_sample.py` (generates the pairs) |
+| `analysis/` | `stats.py`: recomputes the statistics in the report (run `python analysis/stats.py` from the repository root) |
 | `docs/` | `annotation_guidelines.md`: how the grocery reviews were labelled |
 
 ## How to run (Google Colab)
