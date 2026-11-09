@@ -1,0 +1,10 @@
+# Versions not pinned (Google Colab defaults at the time)
+torch
+nltk
+gensim
+scikit-learn
+scipy
+pandas
+matplotlib
+datasets
+google-play-scraper

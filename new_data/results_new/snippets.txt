@@ -1,0 +1,13 @@
+EMOTION (training set)
+  [sadness] i didnt feel humiliated
+  [sadness] i can go from feeling so hopeless to so damned hopeful just from being around someone who cares and is awake
+  [anger] im grabbing a minute to post i feel greedy wrong
+  [love] i am ever feeling nostalgic about the fireplace i will know that it is still on the property
+  [anger] i am feeling grouchy
+
+GROCERY-APP REVIEWS
+  [negative] The "Masters" of disaster shoot themselves in foot once again. .. You have now changed your app and made it unusable to a large percentage of the population. ..
+  [negative] Extremely difficult not able to finish my application
+  [mixed] When this App is working to it's full potential, it's great. I particularly love the Watchlist feature. In recent months the App either hasn't been updating my 
+  [negative] Can't get into woolworth app for an order as I don't drive any any more.
+  [negative] App no longer compatible with my phone, despite min Android version exceeded. Stinks!

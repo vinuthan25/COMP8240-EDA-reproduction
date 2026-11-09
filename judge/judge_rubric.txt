@@ -1,0 +1,33 @@
+LLM-AS-JUDGE: RUBRIC AND PROCEDURE (COMP8240 final report, EDA replication)
+
+PURPOSE
+Check whether texts edited by EDA's four operations are still valid training examples:
+do they keep the original's label, and do they read fluently?
+
+HOW THE PAIRS WERE MADE
+- 10 original texts per dataset (Emotion training set; grocery-app reviews), 6 to 40 words, drawn at random (seed 0).
+- Grocery reviews flagged by a privacy scan (ids 477, 514, 632, 715, 778, 802, 900, 925) were excluded.
+- Each original was cleaned with the authors' get_only_chars() (lowercase, punctuation removed) and edited once by
+  each operation using the authors' functions: synonym_replacement, random_insertion, random_swap, random_deletion
+  (alpha = 0.1, so n = max(1, int(0.1 * words)) edits). Edits were regenerated (up to 20 tries) until they differed from the original.
+- 80 pairs in total, shuffled. The operation was hidden from the human rater and from the judge.
+- The human rater rated a random 40 of the 80 (5 per dataset per operation), BEFORE seeing the judge's ratings.
+
+QUESTIONS (identical for the human rater and the LLM judge)
+1. label_preserved (1/0): Does the edited text still express the same label (emotion / sentiment) as the original?
+   1 = the label-bearing words/signal of the original are still present and not contradicted.
+   0 = the edit flips, removes or garbles the part that carried the label.
+   Judged against the ORIGINAL (some originals only weakly show their dataset label).
+2. fluency (1-5) of the edited text: 1 unreadable, 2 hard to follow, 3 understandable but awkward,
+   4 one small oddity, 5 natural. Missing punctuation and lowercase are not penalised.
+
+JUDGE
+An LLM (AI assistant), in a single chat session (no API, no temperature setting; not exactly re-runnable). The judge saw the
+dataset, the label, the cleaned original and the edited text for all 80 pairs, and rated each pair independently.
+
+LIMITATIONS
+- Small sample (80 pairs; the human rated 40).
+- Covers only joy / love / sadness (Emotion) and negative / positive (grocery); no rare classes.
+- Several originals do not clearly show their dataset label, so 'preserved' means 'same signal as the original'.
+- The same assistant suggested the first-pass grocery labels, so the judge is not fully independent there.
+- With ~95% of pairs rated 'preserved', Cohen's kappa is unstable; report raw agreement as well.
