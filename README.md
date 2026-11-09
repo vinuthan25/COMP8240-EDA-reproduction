@@ -19,15 +19,16 @@ It has three parts:
 | `data_collection/` | `grocery_dataset.py` and `Grocery_dataset_colab.ipynb`: scraping, cleaning and sampling the grocery reviews |
 | `new_data/` | `eda_new_data.py`, `EDA_new_data_colab.ipynb`, `grocery_reviews_labelled.csv`, and `results_new/` |
 | `judge/` | `judge_results.csv` (80 pairs with ratings) and `judge_rubric.txt` (exact method) |
+| `docs/` | `annotation_guidelines.md`: how the grocery reviews were labelled |
 
 ## How to run (Google Colab)
 - **Replication:** open `replication/EDA_replication_colab.ipynb` in Colab and choose Runtime > Run all. It clones the authors'
-  code and downloads SST-2 and GloVe itself. It took roughly an hour on the default CPU runtime; a GPU runtime is faster.
+  code and downloads SST-2 and GloVe itself. It took about 50 minutes in my Colab session (hardware type not recorded); a GPU runtime is faster.
 - **New data:** open `new_data/EDA_new_data_colab.ipynb`, choose a GPU runtime, run all, and upload `new_data/grocery_reviews_labelled.csv`
   when asked.
 - **Data collection:** `data_collection/Grocery_dataset_colab.ipynb` scrapes the newest 600 Google Play (AU) reviews for each of
   `com.woolworths` and `com.coles.android.shopmate`. Re-running it returns newer reviews, so use the labelled CSV to reproduce results.
-- Package versions were not pinned (Colab defaults at the time). See `requirements.txt` for the packages used.
+- Package versions and hardware were **not recorded** for the SST-2 run (Colab defaults at the time). `requirements.txt` lists the packages without version pins.
 
 ## Results
 
@@ -94,6 +95,9 @@ all pairs were rated "kept"). See `judge/judge_rubric.txt` for the method and li
 - EDA is random; seeds are set, but GPU nondeterminism may cause small differences between runs.
 - The grocery test sets are small, and the uncorrected p-values should be read as suggestive only.
 - The LLM judge was a single chat session and cannot be re-run exactly.
+
+## Licence
+The code is released under the MIT licence (see `LICENSE`). The review texts remain the property of their authors.
 
 ## AI assistance
 An AI assistant was used for code, analysis and drafting, and to suggest first-pass labels and act as the LLM judge. The author is responsible for the content.
