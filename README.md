@@ -21,6 +21,7 @@ It has three parts:
 | `judge/` | `judge_results.csv` (80 pairs with ratings), `judge_rubric.txt` (exact method) and `make_judge_sample.py` (generates the pairs) |
 | `analysis/` | `stats.py`: recomputes the statistics in the report (run `python analysis/stats.py` from the repository root) |
 | `docs/` | `annotation_guidelines.md`: how the grocery reviews were labelled |
+| `report/` | `The final report (PDF)` |
 
 ## How to run (Google Colab)
 - **Replication:** open `replication/EDA_replication_colab.ipynb` in Colab and choose Runtime > Run all. It clones the authors'
